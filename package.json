@@ -1,0 +1,16 @@
+{
+  "name": "marcus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i tailwind.css -o ./src/styles/style.css --watch",
+    "prod": " npx tailwindcss -i tailwind.css -o ./src/styles/style.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.0.24"
+  }
+}
