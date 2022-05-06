@@ -21,13 +21,13 @@
                 </div>
                 <div class="space-y-8">
                     <ul class="flex justify-between text-gray-400">
-                        <li class="span1 bg-slate-700 hover:bg-orange-500 rounded-full h-12 w-12 text-center pt-3 cursor-pointer">1</li>
-                        <li class="span2 bg-slate-700 hover:bg-orange-500 active:bg-slate-500 rounded-full h-12 w-12 text-center pt-3 cursor-pointer">2</li>
-                        <li class="span3 bg-slate-700 hover:bg-orange-500 active:bg-slate-500 rounded-full h-12 w-12 text-center pt-3 cursor-pointer">3</li>
-                        <li class="span4 bg-slate-700 hover:bg-orange-500 active:bg-slate-500 rounded-full h-12 w-12 text-center pt-3 cursor-pointer">4</li>
-                        <li class="span5 bg-slate-700 hover:bg-orange-500 active:bg-slate-500 rounded-full h-12 w-12 text-center pt-3 cursor-pointer">5</li>
+                        <li class="rating span1 bg-slate-700 hover:bg-orange-500 rounded-full h-12 w-12 text-center pt-3 cursor-pointer" data-rating="1" onclick="effectRating(this)">1</li>
+                        <li class="rating span2 bg-slate-700 hover:bg-orange-500 rounded-full h-12 w-12 text-center pt-3 cursor-pointer" data-rating="2" onclick="effectRating(this)">2</li>
+                        <li class="rating span3 bg-slate-700 hover:bg-orange-500 rounded-full h-12 w-12 text-center pt-3 cursor-pointer" data-rating="3" onclick="effectRating(this)">3</li>
+                        <li class="rating span4 bg-slate-700 hover:bg-orange-500 rounded-full h-12 w-12 text-center pt-3 cursor-pointer" data-rating="4" onclick="effectRating(this)">4</li>
+                        <li class="rating span5 bg-slate-700 hover:bg-orange-500 rounded-full h-12 w-12 text-center pt-3 cursor-pointer" data-rating="5" onclick="effectRating(this)">5</li>
                     </ul>
-                    <button class="btn bg-orange-500 rounded-full w-full text-gray-300 text-2xl py-3 hover:bg-gray-300 hover:text-orange-500" id="submit" type="submit">SUBMIT</button>
+                    <button class="btn bg-orange-500 rounded-full w-full text-gray-300 text-2xl py-3 hover:bg-gray-300 hover:text-orange-500" id="submit" onclick="buttonClick()" type="button">SUBMIT</button>
                 </div>
             </div>
             <!-- Thank You Confirmation -->
@@ -35,7 +35,7 @@
                 <div class="flex justify-center">
                     <img src="./assets/illustration-thank-you.svg" alt="">                
                 </div>
-                <p class="finalMessage rounded-full py-1 mx-auto bg-slate-700 text-orange-400">No rating selection was made</p>
+                <p class="finalMessage rounded-full py-1 mx-auto bg-slate-700 text-orange-400"></p>
                 <h1 class="text-2xl font-semibold text-gray-300">Thank You!</h1>
                 <p class="text-gray-400">We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
             </div>

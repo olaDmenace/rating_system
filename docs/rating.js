@@ -1,51 +1,21 @@
 "use strict";
 
-const ratingOne = document.querySelector(".span1").addEventListener("click", function(){
-    this.classList.replace("bg-slate-700", "bg-slate-500")
-    document.querySelector(".span2").classList.replace("bg-slate-500", "bg-slate-700")
-    document.querySelector(".span3").classList.replace("bg-slate-500", "bg-slate-700")
-    document.querySelector(".span4").classList.replace("bg-slate-500", "bg-slate-700")
-    document.querySelector(".span5").classList.replace("bg-slate-500", "bg-slate-700")
-    document.querySelector(".finalMessage").textContent = "You selected 1 out of 5"
-})
+let finalRating
 
-const ratingTwo = document.querySelector(".span2").addEventListener("click", function(){
-    this.classList.replace("bg-slate-700", "bg-slate-500")
-    document.querySelector(".span1").classList.replace("bg-slate-500", "bg-slate-700")
-    document.querySelector(".span3").classList.replace("bg-slate-500", "bg-slate-700")
-    document.querySelector(".span4").classList.replace("bg-slate-500", "bg-slate-700")
-    document.querySelector(".span5").classList.replace("bg-slate-500", "bg-slate-700")
-    document.querySelector(".finalMessage").textContent = "You selected 2 out of 5"
-})
+const effectRating = (ratingElement) => {
+    finalRating = ratingElement.getAttribute("data-rating")
+    document.querySelectorAll(".rating").forEach((el) => {
+        el.classList.replace("bg-slate-500", "bg-slate-700")
+    })
+    ratingElement.classList.replace("bg-slate-700", "bg-slate-500")
+}
 
-const ratingThree = document.querySelector(".span3").addEventListener("click", function(){
-    this.classList.replace("bg-slate-700", "bg-slate-500")
-    document.querySelector(".span1").classList.replace("bg-slate-500", "bg-slate-700")
-    document.querySelector(".span2").classList.replace("bg-slate-500", "bg-slate-700")
-    document.querySelector(".span4").classList.replace("bg-slate-500", "bg-slate-700")
-    document.querySelector(".span5").classList.replace("bg-slate-500", "bg-slate-700")
-    document.querySelector(".finalMessage").textContent = "You selected 3 out of 5"
-})
-
-const ratingFour = document.querySelector(".span4").addEventListener("click", function(){
-    this.classList.replace("bg-slate-700", "bg-slate-500")
-    document.querySelector(".span2").classList.replace("bg-slate-500", "bg-slate-700")
-    document.querySelector(".span3").classList.replace("bg-slate-500", "bg-slate-700")
-    document.querySelector(".span1").classList.replace("bg-slate-500", "bg-slate-700")
-    document.querySelector(".span5").classList.replace("bg-slate-500", "bg-slate-700")
-    document.querySelector(".finalMessage").textContent = "You selected 4 out of 5"
-})
-
-const ratingFive = document.querySelector(".span5").addEventListener("click", function(){
-    this.classList.replace("bg-slate-700", "bg-slate-500")
-    document.querySelector(".span2").classList.replace("bg-slate-500", "bg-slate-700")
-    document.querySelector(".span3").classList.replace("bg-slate-500", "bg-slate-700")
-    document.querySelector(".span4").classList.replace("bg-slate-500", "bg-slate-700")
-    document.querySelector(".span1").classList.replace("bg-slate-500", "bg-slate-700")
-    document.querySelector(".finalMessage").textContent = "You selected 5 out of 5"
-})
-
-document.querySelector("button").addEventListener("click", function(){
+const buttonClick = () => {
     document.querySelector(".first").classList.add("hidden")
     document.querySelector(".second").classList.replace("hidden", "block")
-})
+    if (finalRating === undefined) {
+        document.querySelector(".finalMessage").innerHTML = `No rating selection was made`
+     } else {
+    document.querySelector(".finalMessage").innerHTML = `You selected ${finalRating} out of 5`
+    }
+}
